@@ -6,6 +6,8 @@ import { BackgroundCircles,BottomLine,Gradient} from './design/Hero'
 import { heroIcons} from '../constants'
 import { ScrollParallax } from 'react-just-parallax'
 import Generating from './Generating'
+import Notification from './Notification'
+import CompanyLogos from './CompanyLogos'
 
 const Hero = () => {
     const parallaxRef = useRef(null)
@@ -40,7 +42,7 @@ const Hero = () => {
                                     height={490}
                                     alt='AI'
                                 />
-                                <Generating className='absoulute right-4 left-4 bottom-5 md:left-1/2 md:right-auto md:bottom-auto md:w-[35rem] md:-translate-x-1/2'/>
+                                <Generating className="absolute left-4 right-4 bottom-5 md:left-1/2 md:right-auto md:bottom-8 md:w-[31rem] md:-translate-x-1/2" />
                                 <ScrollParallax isAbsolutelyPositioned >
                                     <ul className='hidden absolute -left-[5.5rem] bottom-[7.5rem] px-1 py-1 bg-n-9/40 backdrop-blur border border-n-10 rounded-2xl xl:flex'>
                                         {heroIcons.map((icon,index) => (
@@ -49,6 +51,9 @@ const Hero = () => {
                                             </li>
                                         ))}
                                     </ul>
+                                </ScrollParallax>
+                                <ScrollParallax isAbsolutelyPositioned>
+                                    <Notification className='hidden absolute -right-[5.5rem] bottom-[11rem] w-[18rem] xl:flex' title='Code Generation' />
                                 </ScrollParallax>
                             </div>
                         </div>
@@ -64,6 +69,7 @@ const Hero = () => {
                     </div>
                     <BackgroundCircles/>
                 </div>
+                <CompanyLogos className='hidden z-10 relative md:block mt-20' /> 
             </div>
             <BottomLine/>
         </Section>
